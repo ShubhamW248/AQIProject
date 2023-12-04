@@ -1,3 +1,4 @@
 AQI_Random.joblib filter=lfs diff=lfs merge=lfs -text
 AQI_Random.joblib
  filter=lfs diff=lfs merge=lfs -text
+*.joblib filter=lfs diff=lfs merge=lfs -text
