@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AQI Predictor</title>
+
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 36px;
+            color: #333;
+            border-bottom: 2px solid #333;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        #container {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin-top: 50px;
+            margin-left: 20%;
+            margin-right: 20%;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        #left-section, #right-section {
+            padding: 20px;
+            width: 50%;
+        }
+
+        #left-section p {
+            color: #555;
+        }
+
+        select, button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            font-size: 16px;
+            outline: none;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        #result {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <h1>AQI Predictor</h1>
+
+    <div id="container">
+        <div id="left-section">
+            <p>
+                Air Quality Index (AQI) is a measure used to communicate how polluted the air currently is or how polluted it is forecast to become.
+            </p>
+        </div>
+
+        <div id="right-section">
+            <label for="citySelect">Select City:</label>
+            <select id="citySelect">
+                <option value="Ahmedabad">Ahmedabad</option>
+                <option value="Aizawl">Aizawl</option>
+                <option value="Amaravati">Amaravati</option>
+                <option value="Amritsar">Amritsar</option>
+                <option value="Bengaluru">Bengaluru</option>
+                <option value="Bhopal">Bhopal</option>
+                <option value="Brajrajnagar">Brajrajnagar</option>
+                <option value="Chandigarh">Chandigarh</option>
+                <option value="Chennai">Chennai</option>
+                <option value="Coimbatore">Coimbatore</option>
+                <option value="Delhi">Delhi</option>
+                <option value="Ernakulam">Ernakulam</option>
+                <option value="Gurugram">Gurugram</option>
+                <option value="Guwahati">Guwahati</option>
+                <option value="Hyderabad">Hyderabad</option>
+                <option value="Jaipur">Jaipur</option>
+                <option value="Jorapokhar">Jorapokhar</option>
+                <option value="Kochi">Kochi</option>
+                <option value="Kolkata">Kolkata</option>
+                <option value="Lucknow">Lucknow</option>
+                <option value="Mumbai">Mumbai</option>
+                <option value="Patna">Patna</option>
+                <option value="Shillong">Shillong</option>
+                <option value="Talcher">Talcher</option>
+                <option value="Thiruvananthapuram">Thiruvananthapuram</option>
+                <option value="Visakhapatnam">Visakhapatnam</option>
+            </select>
+
+            <button onclick="predictAQI()">Predict AQI</button>
+
+            <div id="result"></div>
+        </div>
+    </div>
+    <script src="pred.js"></script>
+</body>
+</html>

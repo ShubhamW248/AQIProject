@@ -1,0 +1,8 @@
+python == 3.11.*
+scikit-learn
+tensorflow
+pandas
+seaborn
+matplotlib
+Flask
+gunicorn
