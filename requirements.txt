@@ -4,3 +4,4 @@ seaborn
 matplotlib
 Flask
 gunicorn
+flask_cors
