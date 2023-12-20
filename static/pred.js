@@ -71,7 +71,6 @@ function predictAQI() {
             // var result = getAQIBucket(predictedAQI);
 
             // Display the result
-            var flaskApiUrl = '/predict';
             var inputData = [
                 pm25,pm10, no, no2, nh3, co, so2, o3,Month
                 
@@ -80,7 +79,7 @@ function predictAQI() {
 
             
             
-            var flaskApiUrl = '/predict';  // Replace with the actual URL where your Flask app is running
+            var flaskApiUrl = 'https://my-aqi-predictor.onrender.com/predict';  // Replace with the actual URL where your Flask app is running
             fetch(flaskApiUrl, {
                 method: 'POST',
                 headers: {
