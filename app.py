@@ -54,7 +54,7 @@ def get_aqi_bucket(predicted_aqi):
 
 if __name__ == '__main__':
     # Use the below line for development
-    app.run(debug=True)
+    #app.run(debug=True)
     
     # Use the below line for production deployment
-    # app.run(host='0.0.0.0', port=your_port_number)
+     app.run(host='0.0.0.0', port=your_port_number)
