@@ -53,7 +53,7 @@ function predictAQI() {
     var coordinates = cityCoordinates[selectedCity];
 
     // Make an API request to OpenWeatherMap for air quality data
-    var apiKey = "4bf259715533bbb26d47540fe14d7b64    "; // Replace with your actual API key
+    var apiKey = "8c5bfe56a59c040cba61361811489834"; // Replace with your actual API key
     var apiUrl = `http://api.openweathermap.org/data/2.5/air_pollution?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}`;
 
     fetch(apiUrl)
