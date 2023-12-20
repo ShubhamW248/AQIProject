@@ -1,14 +1,14 @@
-from flask import Flask, request, jsonify, send_from_directory
+from flask import Flask, request, jsonify, send_from_directory, render_template
 from joblib import load
 from flask_cors import CORS
 import os
 
-app = Flask(__name__, static_url_path='', static_folder='')
+app = Flask(__name__, static_url_path='', static_folder='static')
 CORS(app)
 
-
 # Load the pre-trained model
-model = load('C:/AQI/AQIProject/RM2.joblib')
+model_path = 'models/RM2.joblib'
+model = load(model_path)
 
 @app.route('/predict', methods=['POST'])
 def predict_aqi():
@@ -32,8 +32,8 @@ def predict_aqi():
 
 @app.route('/')
 def index():
-    # Serve the index.html file from the same directory as 'app.py'
-    return send_from_directory(os.path.dirname(os.path.abspath(__file__)), 'index.html')
+    # Serve the index.html file from the 'templates' folder
+    return render_template('index.html')
 
 def get_aqi_bucket(predicted_aqi):
     # Your existing code for determining AQI bucket
@@ -53,4 +53,8 @@ def get_aqi_bucket(predicted_aqi):
         return "Out of Range"
 
 if __name__ == '__main__':
+    # Use the below line for development
     app.run(debug=True)
+    
+    # Use the below line for production deployment
+    # app.run(host='0.0.0.0', port=your_port_number)
