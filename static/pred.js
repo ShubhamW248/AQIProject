@@ -54,7 +54,7 @@ function predictAQI() {
 
     // Make an API request to OpenWeatherMap for air quality data
     var apiKey = "8c5bfe56a59c040cba61361811489834"; // Replace with your actual API key
-    var apiUrl = `http://api.openweathermap.org/data/2.5/air_pollution?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}`;
+    var apiUrl = `https://api.openweathermap.org/data/2.5/air_pollution?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}`;
 
     fetch(apiUrl)
         .then(response => response.json())
